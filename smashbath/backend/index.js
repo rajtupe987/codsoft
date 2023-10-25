@@ -1,12 +1,11 @@
 const express=require("express");
-
-
-const {connection}=require("./config/db")
+const {connection}=require("./config/db");
 
 const app=express();
 
 require("dotenv").config();
 
+const {userRoute}=require("./routes/user.router")
 
 app.get("/new",async(req,res)=>{
 
@@ -17,6 +16,10 @@ app.get("/new",async(req,res)=>{
     }
     
 });
+
+
+app.use("/user",userRoute)
+
 
 app.listen(process.env.port,async()=>{
     try {
