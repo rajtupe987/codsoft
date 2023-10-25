@@ -5,7 +5,10 @@ const app=express();
 
 require("dotenv").config();
 
-const {userRoute}=require("./routes/user.router")
+
+app.use(express.json())
+const {userRoute}=require("./routes/user.router");
+const e = require("express");
 
 app.get("/new",async(req,res)=>{
 
