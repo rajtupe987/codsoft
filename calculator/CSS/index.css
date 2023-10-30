@@ -1,0 +1,70 @@
+#container {
+    height: 500px;
+    width: 40%;
+    border: 1px solid black;
+    margin: auto;
+    padding: 2%;
+    margin-top: 60px;
+}
+
+#container:nth-child(1)>div {
+    width: 90%;
+    margin-left: 20px;
+    padding: 2%;
+    border: 1px solid rgb(0, 0, 0);
+
+}
+
+
+h1 {
+    text-align: center;
+}
+
+
+
+#con {
+
+    height: 400px;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 110px;
+}
+
+#con>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    gap: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+
+#con>div:hover {
+    background-color: rgb(77, 75, 75);
+}
+
+.oprator {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+#enter {
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    /* grid-row: span 2; */ /* This will make the element with ID "enter" take two rows */
+}
