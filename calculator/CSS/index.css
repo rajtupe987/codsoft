@@ -56,7 +56,7 @@ h1 {
     background-color: rgb(77, 75, 75);
 }
 
-.oprator {
+#mul,#divide,#plus,#C,#sub {
     background-color: black;
     color: white;
     font-weight: bold;

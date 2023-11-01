@@ -13,22 +13,22 @@
     <div id="container">
         <div id="display"></div>
         <div id="con">
-            <div id="1">1</div>
-            <div id="2" class="new">2</div>
-            <div id="3" class="new">3</div>
-            <div id="4" class="new">4</div>
-            <div id="5" class="new">5</div>
-            <div id="6" class="new">6</div>
-            <div id="7" class="new">7</div>
-            <div id="8" class="new">8</div>
-            <div id="9" class="new">9</div>
-            <div id="0" class="new">0</div>
-            <div id="sub"  class="oprator">-</div>
-            <div id="enter" class="oprator">=</div>
-            <div id="mul" class="oprator">*</div>
-            <div id="divide" class="oprator">/</div>
-            <div id="plus" class="oprator">+</div>
-            <div class="oprator" id="C">C</div>
+            <div id="1" onclick="AppendToDisplay('1')">1</div>
+            <div id="2" class="new" onclick="AppendToDisplay('2')">2</div>
+            <div id="3" class="new" onclick="AppendToDisplay('3')">3</div>
+            <div id="4" class="new" onclick="AppendToDisplay('4')">4</div>
+            <div id="5" class="new" onclick="AppendToDisplay('5')">5</div>
+            <div id="6" class="new" onclick="AppendToDisplay('6')">6</div>
+            <div id="7" class="new" onclick="AppendToDisplay('7')">7</div>
+            <div id="8" class="new" onclick="AppendToDisplay('8')">8</div>
+            <div id="9" class="new" onclick="AppendToDisplay('9')">9</div>
+            <div id="0" class="new" onclick="AppendToDisplay('0')">0</div>
+            <div id="sub" class="new" onclick="AppendToDisplay('-')">-</div>
+            <div id="enter" class="new" onclick="calculate()">=</div>
+            <div id="mul" class="new" onclick="AppendToDisplay('*')">*</div>
+            <div id="divide" class="new" onclick="AppendToDisplay('/')">/</div>
+            <div id="plus" class="new" onclick="AppendToDisplay('+')">+</div>
+            <div id="C" class="new" onclick="clearDisplay()">C</div>
         </div>
     </div>
 </body>
