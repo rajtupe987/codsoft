@@ -1,6 +1,7 @@
 const express=require("express");
 const {connection}=require("./config/db");
-const {authMiddleWare}=require("./Authentication/auth")
+const {product_route}=require("./routes/data.route");
+//const {authMiddleWare}=require("./Authentication/auth")
 const app=express();
 const cors=require("cors")
 require("dotenv").config();
@@ -22,8 +23,9 @@ app.get("/new",async(req,res)=>{
 });
 
 
-app.use("/user",userRoute)
-app.use(authMiddleWare);
+app.use("/user",userRoute);
+app.use("/product",product_route)
+//app.use(authMiddleWare);
 
 app.get("/enter",(req,res)=>{
     res.send("Welcome after login")
