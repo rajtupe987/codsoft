@@ -66,7 +66,7 @@ product_route.post("/add", async (req, res) => {
 // Route to get filtered and sorted data
 product_route.get('/filter-and-sort', async (req, res) => {
     try {
-      const { fragranceCategory, productType, sortBy } = req.query;
+      const { fragranceCategory, productType, sortBy, searchQuery } = req.query;
   
       let filter = {};
       if (fragranceCategory) {
@@ -75,11 +75,24 @@ product_route.get('/filter-and-sort', async (req, res) => {
       if (productType) {
         filter.product_type = productType;
       }
+      // Add search functionality
+      if (searchQuery) {
+        const searchRegex = new RegExp(searchQuery, 'i');
+        // Use the $or operator to match either 'name' or 'category' fields
+        filter.$or = [
+          { name: { $regex: searchRegex } },
+          { category: { $regex: searchRegex } },
+          { fragrance_category: { $regex: searchRegex } },
+          { fragrance_Name: { $regex: searchRegex } },
+          { filter: { $regex: searchRegex } },
+          { description: { $regex: searchRegex } }
+        ];
+      }
   
       let sort = {};
-      if (sortBy === 'price') {
+      if (sortBy === 'price Low to High') {
         sort.price = 1; // Sort by price in ascending order
-      } else if (sortBy === 'price-desc') {
+      } else if (sortBy === 'price High to Low') {
         sort.price = -1; // Sort by price in descending order
       }
   

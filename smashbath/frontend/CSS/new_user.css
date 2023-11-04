@@ -1,0 +1,209 @@
+/* nav bar-top part  */
+* {
+    box-sizing: border-box;
+}
+
+
+#nav {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+#navtop1 {
+    display: flex;
+    gap: 10px;
+    color: #e31b88;
+}
+
+#navtop2 {
+    display: flex;
+    gap: 10px;
+    color: rgb(74, 74, 253);
+}
+
+#navtop1>a {
+    margin-top: 13px;
+}
+
+#navtop2>a {
+    margin-top: 13px;
+}
+
+/* app logo part nav part */
+
+
+/* #logoline {
+height: 150px;
+width: 100%;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+} */
+
+
+#logo {
+    display: flex;
+    margin-top: 15px;
+    font-size: 25px;
+    gap: 20px;
+}
+
+#logo>img {
+    width: 20%;
+    margin-left: 520px;
+}
+
+#logo>div>input {
+    margin-top: 20px;
+    padding: 3%;
+    padding-right: 100px;
+    font-size: 25px;
+}
+
+#logo>a {
+    margin-top: 35px;
+    margin-left: 20px;
+    font-size: 25px;
+    color: black;
+}
+
+#logo>a:hover {
+    color: blue;
+}
+
+#options {
+
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+    font-size: 21px;
+    padding-bottom: 1%;
+
+}
+
+*/ #options>a {
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #4a4a4a;
+}
+
+#options>a {
+    text-decoration: none;
+}
+
+#signinimg>div {
+    width: 85%;
+    margin: 80px auto;
+}
+
+#signinimg>div>img {
+    width: 100%;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    height: auto;
+    width: 35%;
+    margin: 50px auto;
+
+}
+
+form>input {
+    width: 100%;
+    padding: 3%;
+}
+
+form>button {
+    margin-top: 50px;
+    padding: 10px 40px 10px 40px;
+    margin-left: 28%;
+    border: none;
+    color: white;
+    background-color: black;
+}
+
+form>button:hover {
+    color: black;
+    background-color: rgb(227, 227, 227);
+
+
+}
+
+#call {
+    height: 150px;
+    text-align: center;
+}
+
+
+#dispart {
+
+    width: 60%;
+
+    margin: 80px auto;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dispart>pre {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #727272;
+}
+
+#bootom_part {
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    gap: 50px;
+
+}
+
+#bootom_part>div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+#bootom_part>div:nth-child(2)>div>p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #727272;
+    font-size: 17px;
+}
+
+#bootom_part>div>p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #727272;
+    font-size: 17px;
+}
+
+#bootom_part>h3,
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* last bottom part */
+
+#lastbottom {
+    height: 200px;
+    width: 100%;
+    background-color: #e6e6e6;
+    padding: 3%;
+}
+
+#lastbottom>pre {
+    text-align: center;
+    font-size: 13px;
+}
+
+#lastbottom>p {
+    text-align: center;
+    color: #727272;
+}

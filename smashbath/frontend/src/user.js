@@ -1,32 +1,53 @@
+const { stringify } = require("querystring");
+
 // testing//
 let form = document.querySelector("#signin");
 
 const URL = "http://localhost:3090";
 
-form.addEventListener("submit", async(e)=>{
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
+
     const formData = {
-        email:form.email.value,
-        password:form.password.value
+        email: form.email.value,
+        password: form.password.value
     }
     console.log(formData)
-    
+
     const request = await fetch(`${URL}/user/login`, {
-        method:"POST",
-        headers:{
+        method: "POST",
+        headers: {
             "Content-type": "application/json"
         },
-        body:JSON.stringify(formData)
+        body: JSON.stringify(formData)
     });
     const response = await request.json();
-    if(response.ok){
+    if (response.ok) {
 
-        console.log(response);
 
-        console.log("success");
+        const token=response.token;
         const username = response.username;
-        console.log(`Username: ${username}`);
+
+        localStorage.setItem("token",stringify(token))
+        localStorage.setItem("username", username);
+        Swal.fire(
+            response.msg,
+            '',
+            'success'
+        )
+        // const show_line = document.querySelector("#n_user");
+
+
+        // if (find_username) {
+        //     show_line.style.display = "block";
+
+        //     const userSpan=document.querySelector("#username");
+        //     userSpan.textContent=localStorage.getItem("username");
+
+        // } else {
+        //     show_line.style.display = "none"
+        // }
+
     } else {
         Swal.fire({
             icon: "error",
