@@ -30,10 +30,40 @@ function fetchAndDisplayData(page) {
             <p>${item.new_arrival ? 'New Arrival' : ''}</p>
             <p>${item.best_seller ? 'Best seller' : ''}</p>
             <p>Top Rated: ${item.top_rated ? 'Yes' : 'No'}</p>
-            <button>Add to cart</button>
+            <button id="button">Add to cart</button>
         `;
 
+        const button=itemDiv.querySelector("#button");
 
+        button.addEventListener("click",()=>{
+        
+         const image=item.image
+         const name=item.name
+         const rating=item.rating
+         const price=item.price
+         const PrductId=item.PrductId
+         const quantity=1
+
+        const UserId=localStorage.getItem("UserId");
+
+        console.log(UserId);
+
+          fetch("",{
+            method:"POST",
+            headers:{
+              "content-Type":"application/json"
+            },
+            body:JSON.stringify({image,name,rating,price,PrductId,quantity,UserId})
+          })
+        }).then((res)=>{
+
+        }).then((data)=>{
+
+        }).catch(()=>{
+
+        });
+
+        
         document.getElementById('prod').appendChild(itemDiv);
       });
 
@@ -119,6 +149,14 @@ document.getElementById('filterButton').addEventListener('click', () => {
              
              const descriptionElement = document.createElement('p');
              descriptionElement.textContent = product.description;
+
+             const button=document.createElement("button");
+             button.textContent="Add To Bag";
+
+             button.addEventListener("click",()=>{
+              console.log(product._id)
+            })
+    
      
              // Append the product information elements to the product container
              productContainer.appendChild(image)
@@ -126,10 +164,10 @@ document.getElementById('filterButton').addEventListener('click', () => {
              productContainer.appendChild(ratingElement);
              productContainer.appendChild(priceElement);
              productContainer.appendChild(descriptionElement);
-            
-     
+             productContainer.appendChild(button)
              // Append the product container to the productList container
              productListContainer.appendChild(productContainer);
+             
            });
 
     });
@@ -183,12 +221,22 @@ document.getElementById('search-btn').addEventListener('click', () => {
         const descriptionElement = document.createElement('p');
         descriptionElement.textContent = product.description;
 
+        const button=document.createElement("button");
+        button.textContent="Add To cart";
+
+        button.addEventListener("click",()=>{
+          console.log(product._id)
+        })
+
         // Append the product information elements to the product container
         productContainer.appendChild(image)
         productContainer.appendChild(nameElement);
         productContainer.appendChild(ratingElement);
         productContainer.appendChild(priceElement);
         productContainer.appendChild(descriptionElement);
+        productContainer.appendChild(button);
+
+
        
 
         // Append the product container to the productList container
