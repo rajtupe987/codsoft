@@ -1,4 +1,3 @@
-const { stringify } = require("querystring");
 
 // testing//
 let form = document.querySelector("#signin");
@@ -13,7 +12,7 @@ form.addEventListener("submit", async (e) => {
         password: form.password.value
     }
     console.log(formData)
-
+    // http://localhost:3090/user/login
     const request = await fetch(`${URL}/user/login`, {
         method: "POST",
         headers: {
@@ -24,12 +23,15 @@ form.addEventListener("submit", async (e) => {
     const response = await request.json();
     if (response.ok) {
 
-
+        
         const token=response.token;
         const username = response.username;
+        const userID=response.user_id
 
-        localStorage.setItem("token",stringify(token))
+        localStorage.setItem("token",token)
         localStorage.setItem("username", username);
+        localStorage.setItem("userID",userID)
+
         Swal.fire(
             response.msg,
             '',

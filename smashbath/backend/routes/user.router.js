@@ -92,7 +92,8 @@ userRoute.post("/login", async (req, res) => {
     const response = {
       "ok": true,
       "token": token,
-      "username":user.username
+      "username":user.username,
+      "user_id":user._id
     }
 
     res.status(200).json(response)
